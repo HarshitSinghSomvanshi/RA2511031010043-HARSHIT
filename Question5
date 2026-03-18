@@ -1,0 +1,43 @@
+
+#include <iostream>
+using namespace std;
+class Book {
+protected:
+    int bookId;
+    string bookName;
+public:
+    void getBook() {
+        cout << "Enter Book ID: ";
+        cin >> bookId;
+        cout << "Enter Book Name: ";
+        cin >> bookName;
+    }
+    void displayBook() {
+        cout << "Book ID: " << bookId << endl;
+        cout << "Book Name: " << bookName << endl;
+    }
+};
+class Library : public Book {
+private:
+    string author;
+    string issueStatus;
+public:
+    void getLibrary() {
+        getBook();
+        cout << "Enter Author: ";
+        cin >> author;
+        cout << "Enter Issue Status (Issued/NotIssued): ";
+        cin >> issueStatus;
+    }
+    void displayLibrary() {
+        displayBook();
+        cout << "Author: " << author << endl;
+        cout << "Issue Status: " << issueStatus << endl;
+    }
+};
+int main() {
+    Library l;
+    l.getLibrary();
+    l.displayLibrary();
+    return 0;
+}
