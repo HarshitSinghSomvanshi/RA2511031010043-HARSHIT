@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+class Vehicle {
+protected:
+    string vehicleNo, model;
+public:
+    void getVehicle() {
+        cout << "Enter Vehicle Number: ";
+        cin >> vehicleNo;
+        cout << "Enter Model: ";
+        cin >> model;
+    }
+    void displayVehicle() {
+        cout << "Vehicle Number: " << vehicleNo << endl;
+        cout << "Model: " << model << endl;
+    }
+};
+class Car : public Vehicle {
+private:
+    string fuelType;
+    float price;
+public:
+    void getCar() {
+        getVehicle();
+        cout << "Enter Fuel Type: ";
+        cin >> fuelType;
+        cout << "Enter Price: ";
+        cin >> price;
+    }
+    void displayCar() {
+        displayVehicle();
+        cout << "Fuel Type: " << fuelType << endl;
+        cout << "Price: " << price << endl;
+    }
+};
+int main() {
+    Car c;
+    c.getCar();
+    c.displayCar();
+    return 0;
+}
